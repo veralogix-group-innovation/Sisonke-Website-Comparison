@@ -6,16 +6,9 @@ function App() {
       style={{
         minHeight: '100vh',
         margin: 0,
-        backgroundColor: '#f4f6fb',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#102027',
-        fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+        backgroundColor: '#f0f4f8',
       }}
-    >
-      <h1>Sisonke Website</h1>
-    </div>
+    />
   )
 }
 
