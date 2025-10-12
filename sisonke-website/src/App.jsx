@@ -1,14 +1,8 @@
-import './App.css'
-
 function App() {
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        margin: 0,
-        backgroundColor: '#f0f4f8',
-      }}
-    />
+    <div className="bg-[#31484E] min-h-screen">
+      {/* Components will be added here in the next steps */}
+    </div>
   )
 }
 
