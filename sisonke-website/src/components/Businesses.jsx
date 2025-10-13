@@ -9,6 +9,8 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
+const MotionDiv = motion.div
+
 const Businesses = () => {
   const [businesses, setBusinesses] = useState([])
   const [status, setStatus] = useState('loading')
@@ -27,7 +29,7 @@ const Businesses = () => {
         const records = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
         setBusinesses(records)
         setStatus('success')
-      } catch (error) {
+      } catch {
         if (!isMounted) {
           return
         }
@@ -87,7 +89,7 @@ const Businesses = () => {
               tabIndex={0}
             >
               {businesses.map((business) => (
-                <motion.div
+                <MotionDiv
                   key={business.id}
                   className="flex min-w-[280px] max-w-xs flex-col justify-between gap-4 rounded-3xl border border-[#603B26] bg-[#391B11] p-6 text-left shadow-[0_10px_28px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F4D4A5] sm:min-w-[320px]"
                   initial="hidden"
@@ -131,7 +133,7 @@ const Businesses = () => {
                       </div>
                     )}
                   </dl>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
           </div>
