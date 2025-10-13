@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
 const steps = [
   {
@@ -49,7 +49,7 @@ const HowItWorks = () => (
         </h2>
       </header>
 
-      <motion.ol
+      <Motion.ol
         className="grid grid-cols-1 gap-10 md:grid-cols-3"
         variants={container}
         initial="hidden"
@@ -57,7 +57,7 @@ const HowItWorks = () => (
         viewport={{ once: true, margin: '-120px' }}
       >
         {steps.map((step, index) => (
-          <motion.li
+          <Motion.li
             key={step.title}
             className="flex flex-col gap-4 rounded-3xl border border-[#3F575C] bg-[#31484E] p-8 shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
             variants={item}
@@ -65,9 +65,9 @@ const HowItWorks = () => (
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#CEBDAD]">Step {index + 1}</span>
             <h3 className="text-2xl font-semibold text-[#FFF9B0]">{step.title}</h3>
             <p className="text-sm leading-6 text-[#CEBDAD] sm:text-base">{step.description}</p>
-          </motion.li>
+          </Motion.li>
         ))}
-      </motion.ol>
+      </Motion.ol>
     </div>
   </section>
 )
