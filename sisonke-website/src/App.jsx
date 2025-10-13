@@ -6,8 +6,6 @@ import Features from './components/Features'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
 
-const MotionDiv = motion.div
-
 function App() {
   const appRef = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -19,20 +17,20 @@ function App() {
 
   return (
     <div ref={appRef} className="relative bg-[#31484E] text-white">
-      <MotionDiv
+      <motion.div
         className="fixed left-0 top-0 z-50 h-1 w-full origin-left bg-[#66ADA7]"
         style={{ scaleX: scrollYProgress }}
       />
 
       <main className="flex flex-col gap-24 pb-24 pt-1 sm:gap-32">
         <Hero />
-        <MotionDiv
+        <motion.div
           aria-hidden
           className="relative"
           style={{ y: featureParallax }}
         >
           <Features />
-        </MotionDiv>
+        </motion.div>
         <HowItWorks />
         <Businesses />
       </main>

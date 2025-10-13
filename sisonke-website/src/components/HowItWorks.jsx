@@ -39,9 +39,6 @@ const item = {
   },
 }
 
-const MotionOrderedList = motion.ol
-const MotionListItem = motion.li
-
 const HowItWorks = () => (
   <section className="relative bg-[#2A3A3F] py-20 sm:py-24">
     <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 lg:px-8">
@@ -52,7 +49,7 @@ const HowItWorks = () => (
         </h2>
       </header>
 
-      <MotionOrderedList
+      <motion.ol
         className="grid grid-cols-1 gap-10 md:grid-cols-3"
         variants={container}
         initial="hidden"
@@ -60,7 +57,7 @@ const HowItWorks = () => (
         viewport={{ once: true, margin: '-120px' }}
       >
         {steps.map((step, index) => (
-          <MotionListItem
+          <motion.li
             key={step.title}
             className="flex flex-col gap-4 rounded-3xl border border-[#3F575C] bg-[#31484E] p-8 shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
             variants={item}
@@ -68,9 +65,9 @@ const HowItWorks = () => (
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#CEBDAD]">Step {index + 1}</span>
             <h3 className="text-2xl font-semibold text-[#FFF9B0]">{step.title}</h3>
             <p className="text-sm leading-6 text-[#CEBDAD] sm:text-base">{step.description}</p>
-          </MotionListItem>
+          </motion.li>
         ))}
-      </MotionOrderedList>
+      </motion.ol>
     </div>
   </section>
 )

@@ -9,8 +9,6 @@ const cardVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
-const MotionDiv = motion.div
-
 const Businesses = () => {
   const [businesses, setBusinesses] = useState([])
   const [status, setStatus] = useState('loading')
@@ -89,7 +87,7 @@ const Businesses = () => {
               tabIndex={0}
             >
               {businesses.map((business) => (
-                <MotionDiv
+                <motion.div
                   key={business.id}
                   className="flex min-w-[280px] max-w-xs flex-col justify-between gap-4 rounded-3xl border border-[#603B26] bg-[#391B11] p-6 text-left shadow-[0_10px_28px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F4D4A5] sm:min-w-[320px]"
                   initial="hidden"
@@ -133,7 +131,7 @@ const Businesses = () => {
                       </div>
                     )}
                   </dl>
-                </MotionDiv>
+                </motion.div>
               ))}
             </div>
           </div>
