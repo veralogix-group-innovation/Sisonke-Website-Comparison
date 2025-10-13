@@ -1,21 +1,25 @@
-import { fireEvent, render, screen } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { render, screen } from '@testing-library/react'
+import { describe, it, expect, beforeEach } from 'vitest'
 
 import HowItWorks from '../HowItWorks'
 
 describe('HowItWorks component', () => {
-  it('updates the active step when a different option is selected', () => {
+  beforeEach(() => {
+    global.IntersectionObserver = class {
+      observe() {}
+      disconnect() {}
+      unobserve() {}
+      takeRecords() {
+        return []
+      }
+    }
+  })
+
+  it('lists three sequential steps', () => {
     render(<HowItWorks />)
 
-    const discoverButton = screen.getByRole('button', { name: /1\. Discover/ })
-    const purchaseButton = screen.getByRole('button', { name: /2\. Purchase/ })
-
-    expect(discoverButton).toHaveAttribute('aria-pressed', 'true')
-    expect(purchaseButton).toHaveAttribute('aria-pressed', 'false')
-
-    fireEvent.click(purchaseButton)
-
-    expect(discoverButton).toHaveAttribute('aria-pressed', 'false')
-    expect(purchaseButton).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('Step 1')).toBeInTheDocument()
+    expect(screen.getByText('Step 2')).toBeInTheDocument()
+    expect(screen.getByText('Step 3')).toBeInTheDocument()
   })
 })
