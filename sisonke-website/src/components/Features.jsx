@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion as Motion, useInView } from 'framer-motion'
 
 const featureCards = [
   {
@@ -49,7 +49,7 @@ const Features = () => {
 
   return (
     <section className="bg-[#1c1c1c] py-20 sm:py-24">
-      <motion.div
+      <Motion.div
         ref={sectionRef}
         className="mx-auto max-w-6xl px-6 lg:px-8"
         variants={containerVariants}
@@ -68,7 +68,7 @@ const Features = () => {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {featureCards.map((feature) => (
-            <motion.article
+            <Motion.article
               key={feature.title}
               variants={cardVariants}
               className="group rounded-3xl bg-[#391B11] p-8 shadow-[0_20px_45px_rgba(18,18,18,0.35)] transition-shadow transition-transform duration-300"
@@ -83,10 +83,10 @@ const Features = () => {
                   {feature.description}
                 </p>
               </div>
-            </motion.article>
+            </Motion.article>
           ))}
         </div>
-      </motion.div>
+      </Motion.div>
     </section>
   )
 }

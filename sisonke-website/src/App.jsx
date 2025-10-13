@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion as Motion, useScroll, useTransform } from 'framer-motion'
 
 import Businesses from './components/Businesses'
 import Features from './components/Features'
@@ -17,20 +17,20 @@ function App() {
 
   return (
     <div ref={appRef} className="relative bg-[#31484E] text-white">
-      <motion.div
+      <Motion.div
         className="fixed left-0 top-0 z-50 h-1 w-full origin-left bg-[#66ADA7]"
         style={{ scaleX: scrollYProgress }}
       />
 
       <main className="flex flex-col gap-24 pb-24 pt-1 sm:gap-32">
         <Hero />
-        <motion.div
+        <Motion.div
           aria-hidden
           className="relative"
           style={{ y: featureParallax }}
         >
           <Features />
-        </motion.div>
+        </Motion.div>
         <HowItWorks />
         <Businesses />
       </main>
